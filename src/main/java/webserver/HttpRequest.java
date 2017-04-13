@@ -37,8 +37,8 @@ public class HttpRequest {
             throw new Exception("헤더정보를 만들수 없습니다.");
         }
 
-        this.httpMethod = HttpRequestLine.getPath(line.split(" ")[0]);
-        this.urlPath = HttpRequestLine.getPath(line.split(" ")[1]);
+        this.httpMethod = HttpRequestLine.getHttpMethod(line);
+        this.urlPath = HttpRequestLine.getPath(line);
     }
 
     private void getHeadersFromReader(BufferedReader br) throws IOException {
